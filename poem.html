@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>첫 페이지</title>
+    <style>
+        body {
+	background-image: url('images/back.png');
+	background-size: 1700px;
+	background-repeat: no-repeat;
+	background-color: teal;
+        }
+        p {
+	font-family: 휴먼편지체;
+        }
+        h2 {
+	text-align: center;
+        }
+        h3 {
+	color: white;
+        }
+        h4 {
+	text-align: right;
+	font-family: 궁서;
+        }
+        #myElement {
+	font-size: 25px;
+	position: absolute;
+	top: 120px;
+	left: 1000px;
+        }
+        #myForm {
+	position: absolute;
+	top: 200px;
+	left: 1700px;
+	border: 2px solid lightgreen;
+	padding: 10px 20px;
+	border-radius: 25px;
+        }
+        #button {
+	width: 100px;
+	height: 50px;
+	font-size: 15px;
+        }
+        #colorPicker {
+	width: 100px;
+	height: 30px;
+        }
+        select {
+	width: 120px;
+	height: 50px;
+	font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="myElement" contenteditable="true">
+
+	<h2>하늘</h2>
+	<h4>임화</h4>
+	<p>
+	감이 붉은 시골 가을이<br>
+	아득히 푸른 하늘에 놀 같은<br>
+	미결사의 가을 해가 밤보다도 길다.</p>
+
+	<p>갔다가 오고, 왔다가 가고,<br>
+	한 간 좁은 방 벽은 두터워,<br>
+	높은 들창 가에<br>
+	하늘은 어린애처럼 찰락거리는 바다</p>
+
+	<p>나의 생각고 궁리하던 이것저것을,<br>
+	다 너의 물결 위에 실어,<br>
+	구름이 흐르는 곳으로 띄워볼까!</p>
+
+	<p>동해바닷가에 작은 촌은,<br>
+	어머니가 있는 내 고향이고,<br>
+	한강물이 숭얼대는<br>
+	영등포 붉은 언덕은,<br>
+	목숨을 바쳤던 나의 전장.</p>
+
+	<p>오늘도 연기는<br>
+	구름보다 높고,<br>
+	누구이고 청년이 몇,<br>
+	너무나 좁은 하늘을<br>
+	넓은 희망의 눈동자 속 깊이<br>
+	호수처럼 담으리라.</p>
+
+	<p>벌리는 팔이 아무리 좁아도,<br>
+	오오! 하늘보다 너른 나의 바다.</p>
+    </div>
+    <form id="myForm">
+         <h3>글자 색상:</h4> <input type="color" id="colorPicker">
+			<input type="button" id="button" value="변경" onclick="document.execCommand('foreColor', 'false', document.getElementById('colorPicker').value)">
+                       		<br /><br />
+         <h3>글자 크기:</h3> <select onchange="document.execCommand('fontSize', 'false', this.value)">
+			    <option value="글자 크기">글자 크기</option>
+		   	    <option value="1">작게</option>
+		   	    <option value="3">보통</option>
+                             	    <option value="5">크게</option>
+                       		</select>
+	          		<br /><br />
+         <h3>폰트 설정:</h3> <select onchange="document.execCommand('fontName', 'false', this.value)">
+			    <option value="폰트 모양">폰트 모양</option>
+			    <option value="바탕">바탕</option>
+		    	    <option value="궁서">궁서</option>
+		    	    <option value="휴먼편지체">휴먼편지체</option>
+		    	    <option value="휴먼매직체">휴먼매직체</option>
+		    	    <option value="휴먼옛체">휴먼옛체</option>
+		    	    <option value="휴먼아미체">휴먼아미체</option>
+			    <option vallue="휴먼둥근헤드라인">휴먼둥근헤드라인</option>
+	          		</select>
+	          		<br /><br />
+         <h3>정렬:</h3>
+             <input type="button" id="button" value="왼쪽 정렬" onclick="document.execCommand('justifyleft')">
+             <input type="button" id="button" value="중앙 정렬" onclick="document.execCommand('justifycenter')">
+             <input type="button" id="button" value="오른쪽 정렬" onclick="document.execCommand('justifyright')">
+             <br /><br />
+         <h3>텍스트효과:</h3>        
+	<input type="button" id="button" value="진하게" onclick="document.execCommand('bold')">
+	<input type="button" id="button" value="기울임" onclick="document.execCommand('italic')">
+         <h3>줄:</h3>
+	<input type="button" id="button" value="밑줄(_)" onclick="document.execCommand('underline')">
+	<input type="button" id="button" value="중간줄(-)" onclick="document.execCommand('strikethrough')">
+    </form>
+</body>
+</html>

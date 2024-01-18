@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>두번째 페이지</title>
+    <style>
+        body {
+	background-color: teal;
+        }
+        #myNotePad {
+	width: 1000px;
+	height: 800px;
+	background-color: white;
+        }
+        #myForm {
+	position: absolute;
+	top: 20px;
+	left: 1100px;
+	height: 790px;
+	border: 2px solid black;
+	padding: 10px 20px;
+	border-radius: 25px;
+	background-color: white;
+        }
+        #button {
+	width: 100px;
+	height: 50px;
+	font-size: 15px;
+        }
+        #colorPicker {
+	width: 100px;
+	height: 30px;
+        }
+        select {
+	width: 120px;
+	height: 50px;
+	font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myNotePad" contenteditable="true" >
+    </div>
+    <form id="myForm">
+         <h3>글자 색상:</h4> <input type="color" id="colorPicker">
+	     		<input type="button" id="button" value="변경" onclick="document.execCommand('foreColor', 'false', document.getElementById('colorPicker').value)">
+                       		<br /><br />
+         <h3>글자 크기:</h3> <select onchange="document.execCommand('fontSize', 'false', this.value)">
+			    <option value="글자 크기">글자 크기</option>
+		   	    <option value="1">1</option>
+		   	    <option value="2">2</option>
+                             	    <option value="3">3</option>
+			    <option value="4">4</option>
+			    <option value="5">5</option>
+			    <option value="6">6</option>
+			    <option value="7">7</option>
+                       		</select>
+	          		<br /><br />
+         <h3>폰트 설정:</h3> <select onchange="document.execCommand('fontName', 'false', this.value)">
+	                              <option value="폰트 설정">폰트 설정</option>
+			    <option value="바탕">바탕</option>
+			    <option value="Arial">Arial</option>
+			    <option value="Comic Sans MS">Comic Sans MS</option>
+			    <option value="Times New Roman">Times New Roman</option>
+			    <option value="Impact">Impact</option>
+			    <option value="Courier New">Courier New</option>
+			    <option value="Georgia">Georgia</option>
+		    	    <option value="궁서">궁서</option>
+		    	    <option value="휴먼편지체">휴먼편지체</option>
+		    	    <option value="휴먼매직체">휴먼매직체</option>
+		    	    <option value="휴먼옛체">휴먼옛체</option>
+		    	    <option value="휴먼아미체">휴먼아미체</option>
+			    <option vallue="휴먼둥근헤드라인">휴먼둥근헤드라인</option>
+	          		</select>
+	          		<br /><br />
+         <h3>정렬:</h3>
+             <input type="button" id="button" value="왼쪽 정렬" onclick="document.execCommand('justifyleft')">
+             <input type="button" id="button" value="중앙 정렬" onclick="document.execCommand('justifycenter')">
+             <input type="button" id="button" value="오른쪽 정렬" onclick="document.execCommand('justifyright')">
+             <br /><br />
+         <h3>텍스트효과:</h3>        
+             <input type="button" id="button" value="진하게" onclick="document.execCommand('bold')">
+	<input type="button" id="button" value="기울임" onclick="document.execCommand('italic')">
+         <h3>줄:</h3>
+	<input type="button" id="button" value="밑줄(_)" onclick="document.execCommand('underline')">
+	<input type="button" id="button" value="중간줄(-)" onclick="document.execCommand('strikethrough')">
+    </form>
+  
+</body>
+</html>
